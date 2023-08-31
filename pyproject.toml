@@ -1,16 +1,22 @@
-[tool.poetry]
+[tool.pdm.build]
+includes = []
+[project]
 name = "wasirunner"
 version = "0.1.0"
 description = ""
-authors = ["V <veronika.m.winters@gmail.com>"]
+authors = [
+    {name = "V", email = "veronika.m.winters@gmail.com"},
+]
+dependencies = [
+    "wasmer<2.0.0,>=1.1.0",
+    "wasmer-compiler-cranelift<2.0.0,>=1.1.0",
+]
+requires-python = ">=3.9,<3.11"
 readme = "README.md"
+license = {text = "MIT"}
 
-[tool.poetry.dependencies]
-python = "^3.9"
-wasmer = "^1.1.0"
-wasmer-compiler-cranelift = "^1.1.0"
 
 
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
